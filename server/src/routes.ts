@@ -64,6 +64,6 @@ export async function appRoutes(app: FastifyInstance) {
             return dayHabit.habit_id;
         });
 
-        return { possibleHabits, completedHabits };
+        return { possibleHabits, day, completedHabits };
     });
 }
