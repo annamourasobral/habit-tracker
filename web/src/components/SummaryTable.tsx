@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import { generateDatesFromYearBeginning } from '../utils/generate-dates-from-year-beginning';
 import { HabitDay } from './HabitDay';
+import { api } from '../lib/axios';
 
 const weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
@@ -8,6 +10,12 @@ const minimumSummaryDatesSize = 18 * 7;
 const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length;
 
 export function SummaryTable() {
+    useEffect(() => {
+        api.get('summary').then((response) => {
+            console.log(response.data);
+        });
+    });
+
     return (
         <div className='w-full flex '>
             <div className='grid grid-rows-7 grid-flow-row gap-3'>
