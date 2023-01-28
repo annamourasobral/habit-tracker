@@ -1,7 +1,7 @@
+import dayjs from 'dayjs';
 import { FastifyInstance } from 'fastify';
 import { z } from 'zod';
 import { prisma } from './lib/prisma';
-import dayjs from 'dayjs';
 
 export async function appRoutes(app: FastifyInstance) {
     app.post('/habits', async (request) => {
@@ -61,9 +61,10 @@ export async function appRoutes(app: FastifyInstance) {
             },
         });
 
-        const completedHabits = day?.dayHabits.map((dayHabit) => {
-            return dayHabit.habit_id;
-        });
+        const completedHabits =
+            day?.dayHabits.map((dayHabit) => {
+                return dayHabit.habit_id;
+            }) ?? [];
 
         return {
             possibleHabits,
@@ -121,27 +122,27 @@ export async function appRoutes(app: FastifyInstance) {
 
     app.get('/summary', async () => {
         const summary = await prisma.$queryRaw`
+      SELECT 
+        D.id, 
+        D.date,
+        (
           SELECT 
-            D.id, 
-            D.date,
-            (
-              SELECT 
-                cast(count(*) as float)
-              FROM day_habits DH
-              WHERE DH.day_id = D.id
-            ) as completed,
-            (
-              SELECT
-                cast(count(*) as float)
-              FROM habit_week_days HDW
-              JOIN habits H
-                ON H.id = HDW.habit_id
-              WHERE
-                HDW.week_day = cast(strftime('%w', D.date/1000.0, 'unixepoch') as int)
-                AND H.created_at <= D.date
-            ) as amount
-          FROM days D
-        `;
+            cast(count(*) as float)
+          FROM day_habits DH
+          WHERE DH.day_id = D.id
+        ) as completed,
+        (
+          SELECT
+            cast(count(*) as float)
+          FROM habit_week_days HDW
+          JOIN habits H
+            ON H.id = HDW.habit_id
+          WHERE
+            HDW.week_day = cast(strftime('%w', D.date/1000.0, 'unixepoch') as int)
+            AND H.created_at <= D.date
+        ) as amount
+      FROM days D
+    `;
 
         return summary;
     });
