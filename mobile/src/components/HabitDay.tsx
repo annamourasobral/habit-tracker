@@ -6,6 +6,7 @@ import {
 import clsx from 'clsx';
 
 import { generateProgressPercentage } from '../utils/generate-progress-percentage';
+import dayjs from 'dayjs';
 
 interface Props extends TouchableOpacityProps {
     amountOfHabits?: number;
@@ -22,12 +23,15 @@ export const daySize =
 export function HabitDay({
     amountOfHabits = 0,
     amountCompleted = 0,
+    date,
     ...rest
 }: Props) {
     const amountAccomplishedPercentage =
         amountOfHabits > 0
             ? generateProgressPercentage(amountOfHabits, amountCompleted)
             : 0;
+    const today = dayjs().startOf('day').toDate();
+    const isCurrentDay = dayjs(date).isSame(today);
 
     return (
         <TouchableOpacity
@@ -48,6 +52,7 @@ export function HabitDay({
                     amountAccomplishedPercentage < 80,
                 ['bg-violet-500 border-violet-400']:
                     amountAccomplishedPercentage >= 80,
+                ['border-white border-4']: isCurrentDay,
             })}
             style={{ width: daySize, height: daySize }}
             activeOpacity={0.7}

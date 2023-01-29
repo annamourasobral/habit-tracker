@@ -5,6 +5,8 @@ import colors from 'tailwindcss/colors';
 interface Props {
     checked?: boolean;
     title: string;
+    disabled: boolean;
+    onPress: () => Promise<void>;
 }
 
 export function Checkbox({ checked = false, title, ...rest }: Props) {
