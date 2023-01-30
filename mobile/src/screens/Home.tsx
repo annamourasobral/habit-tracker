@@ -1,14 +1,14 @@
-import { api } from '../lib/axios';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { View, Text, ScrollView, Alert } from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
-
-import { generateDatesFromYearBeginning } from '../utils/generate-dates-from-year-beginning';
+import { api } from '../lib/axios';
+import dayjs from 'dayjs';
 
 import { Header } from '../components/Header';
 import { HabitDay, daySize } from '../components/HabitDay';
 import { Loading } from '../components/Loading';
-import dayjs from 'dayjs';
+
+import { generateDatesFromYearBeginning } from '../utils/generate-dates-from-year-beginning';
 
 type SummaryProps = {
     id: string;

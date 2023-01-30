@@ -3,10 +3,10 @@ import {
     Dimensions,
     TouchableOpacityProps,
 } from 'react-native';
+import dayjs from 'dayjs';
 import clsx from 'clsx';
 
 import { generateProgressPercentage } from '../utils/generate-progress-percentage';
-import dayjs from 'dayjs';
 
 interface Props extends TouchableOpacityProps {
     amountOfHabits?: number;

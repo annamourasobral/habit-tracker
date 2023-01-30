@@ -3,16 +3,16 @@ import { ScrollView, View, Text, Alert } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 
 import dayjs from 'dayjs';
+import clsx from 'clsx';
 import { api } from '../lib/axios';
 
 import { Loading } from '../components/Loading';
 import { BackButton } from '../components/BackButton';
 import { ProgressBar } from '../components/ProgressBar';
 import { Checkbox } from '../components/Checkbox';
-import { generateProgressPercentage } from '../utils/generate-progress-percentage';
 import { HabitsEmpty } from '../components/HabitsEmpty';
-import clsx from 'clsx';
 
+import { generateProgressPercentage } from '../utils/generate-progress-percentage';
 interface Params {
     date: string;
 }

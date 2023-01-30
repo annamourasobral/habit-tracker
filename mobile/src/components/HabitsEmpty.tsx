@@ -1,5 +1,5 @@
-import { useNavigation } from '@react-navigation/native';
 import { Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export function HabitsEmpty() {
     const { navigate } = useNavigation();

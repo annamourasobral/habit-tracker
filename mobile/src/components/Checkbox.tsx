@@ -6,7 +6,7 @@ import Animated, { ZoomIn, ZoomOut } from 'react-native-reanimated';
 interface Props {
     checked?: boolean;
     title: string;
-    disabled: boolean;
+    disabled?: boolean;
     onPress: () => Promise<void>;
 }
 

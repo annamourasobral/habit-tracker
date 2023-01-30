@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
     TouchableOpacity,
     ScrollView,
@@ -6,13 +7,13 @@ import {
     View,
     Alert,
 } from 'react-native';
-import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { api } from '../lib/axios';
 
 import colors from 'tailwindcss/colors';
 import { Feather } from '@expo/vector-icons';
 import { BackButton } from '../components/BackButton';
 import { Checkbox } from '../components/Checkbox';
-import { api } from '../lib/axios';
 
 const availableWeekDays = [
     'Sunday',
@@ -38,6 +39,8 @@ export function New() {
         }
     }
 
+    const { navigate } = useNavigation();
+
     async function handleCreateNewHabit() {
         try {
             if (!title || weekDays.length === 0) {
@@ -56,6 +59,8 @@ export function New() {
         } catch (error) {
             console.log(error);
             Alert.alert('Ooops...', 'Not possible to create the habit');
+        } finally {
+            navigate('home');
         }
     }
 
@@ -84,7 +89,7 @@ export function New() {
                         key={weekDay}
                         title={weekDay}
                         checked={weekDays.includes(index)}
-                        onPress={() => handleToggleWeekDay(index)}
+                        onPress={async () => handleToggleWeekDay(index)}
                     />
                 ))}
 
