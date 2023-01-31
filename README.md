@@ -5,27 +5,43 @@ Habits is a project that aims to track habits during the week, for example: Work
 ## ✨ Technologies
 
 This project was developed with the following technologies:
+### 🚀 Front End Web
 
 - [ReactJS](https://reactjs.org)
-- [ReactNative](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev)
-- [Node](https://nodejs.org/)
-- [Prisma](https://www.prisma.io/)
 - [Tailwindcss](https://tailwindcss.com/)
-- [Fastify](https://www.fastify.io/)
 - [Dayjs](https://day.js.org/)
-- [Expo-font](https://docs.expo.dev/versions/latest/sdk/font)
-- [NativeWind](https://www.nativewind.dev/quick-starts/expo)
+- [Axios](https://axios-http.com/)
 - [Phosphor-React](https://www.npmjs.com/package/phosphor-react)
-- [Zod](https://www.npmjs.com/package/zod)
-- [SVG](https://docs.expo.dev/versions/latest/sdk/svg/)
-- [SVG-TRANSFORM](https://github.com/kristerkari/react-native-svg-transformer)
 - [Radix](https://www.radix-ui.com/)
 - [Radix-REACT-POPOVER](https://www.radix-ui.com/docs/primitives/components/popover)
 - [Radix-Progress](https://www.radix-ui.com/docs/primitives/components/progress)
+- [Clsx](https://www.npmjs.com/package/clsx)
+
+### 🚀 Back End
+- [Node](https://nodejs.org/)
+- [Prisma](https://www.prisma.io/)
+- [Fastify](https://www.fastify.io/)
+- [Dayjs](https://day.js.org/)
+- [Axios](https://axios-http.com/)
+- [Zod](https://www.npmjs.com/package/zod)
+- [SQLite](https://www.sqlite.org/index.html)
+- [SVG](https://docs.expo.dev/versions/latest/sdk/svg/)
+- [SVG-TRANSFORM](https://github.com/kristerkari/react-native-svg-transformer)
+
+### 🚀 Mobile
+- [ReactNative](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Dayjs](https://day.js.org/)
 - [REACT-NAVIGATION](https://reactnavigation.org/)
 - [React-Native-Screens](https://reactnavigation.org/docs/getting-started/)
+- [Expo-font](https://docs.expo.dev/versions/latest/sdk/font)
+- [NativeWind](https://www.nativewind.dev/quick-starts/expo)
+- [Clsx](https://www.npmjs.com/package/clsx)
+- [Axios](https://axios-http.com/)
+- [React Native Reanimated](https://www.npmjs.com/package/react-native-reanimated)
 
 ## 🔖 Layout
 
@@ -35,7 +51,7 @@ You can view the project layout in the format through [this link](https://app.ro
 ## 🛢️ Database ERM
 
 <div align="center">
-<img alt="Entity Relationship Model" src="./server/prisma/ERD.svg"/>
+<img height="300" alt="Entity Relationship Model" src="./server/prisma/ERD.svg"/>
 </div>
 
 ## 🤔 How to contribute
