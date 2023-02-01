@@ -54,7 +54,33 @@ You can view the project layout in the format through [this link](https://app.ro
 <img height="300" alt="Entity Relationship Model" src="./server/prisma/ERD.svg"/>
 </div>
 
-## 🤔 How to contribute
+## 💻 How to run locally
+
+1. Clone the repo:
+
+```bash
+git clone git@github.com:annamourasobral/habit-tracker.git
+```
+
+2. Navigate to each the directory, fx. server:
+
+```bash
+cd server
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+```
+
+4. Run the server
+
+```bash
+npm run dev
+```
+
+## 🤔 How contribute
 
 - Make a fork of this repository;
 - Create a branch with your feature: `git checkout -b my-feature`;
